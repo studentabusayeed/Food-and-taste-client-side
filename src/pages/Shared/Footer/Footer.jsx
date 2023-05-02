@@ -15,7 +15,7 @@ const Footer = () => {
 
                         <div className="container">
 
-                            <section className="mb-5 mt-4">
+                            <section className="mb-3 mt-4">
                                 <div className="row d-flex justify-content-center">
                                     <div className="col-lg-8">
                                         <p>
@@ -24,7 +24,7 @@ const Footer = () => {
                                     </div>
                                 </div>
                             </section>
-                            <section className="text-center mb-5">
+                            <section className="text-center mb-3">
                                 <h3 className='text-light mb-4 text-center'>Get Social with Us</h3>
                                 <a href="" className="text-white me-4">
                                     <FaFacebook style={{ fontSize: '30px' }}></FaFacebook>

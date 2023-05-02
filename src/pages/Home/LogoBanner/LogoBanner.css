@@ -1,0 +1,10 @@
+.banner-logo img {
+    width: 120px;
+    margin-left: 70px;
+}
+
+.banner-item {
+    background-color: rgb(236, 232, 224);
+    padding: 400px;
+    height: 200px;
+}

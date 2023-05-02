@@ -6,17 +6,19 @@ import food3 from '../../../assets/food3.jpg'
 import test1 from '../../../assets/test-1.jpg'
 import test2 from '../../../assets/test-2.jpg'
 import test3 from '../../../assets/test-3.jpg'
-import { Image } from 'react-bootstrap';
+import { Container, Image } from 'react-bootstrap';
 import './Testimonials.css';
 
 const Testimonials = () => {
     return (
-        <div>
+        <Container className='mb-5'>
+            <h3 className=' text-center text-success mb-2 fw-semi-bold fs-2'>Customar Feedback</h3>
+            <hr className='mb-4' />
             <Carousel>
                 <Carousel.Item className='container-item'>
                     <div className='item'>
                         <img
-                            className="d-block w-100"
+                            className="d-block w-100 rounded"
                             src={food5}
                             alt="First slide"
                         />
@@ -36,7 +38,7 @@ const Testimonials = () => {
                 <Carousel.Item className='container-item'>
                     <div className='item'>
                         <img
-                            className="d-block w-100"
+                            className="d-block w-100 rounded"
                             src={food6}
                             alt="First slide"
                         />
@@ -56,7 +58,7 @@ const Testimonials = () => {
                 <Carousel.Item className='container-item'>
                     <div className='item'>
                         <img
-                            className="d-block w-100"
+                            className="d-block w-100 rounded"
                             src={food3}
                             alt="First slide"
                         />
@@ -74,7 +76,7 @@ const Testimonials = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
-        </div>
+        </Container>
     );
 };
 
