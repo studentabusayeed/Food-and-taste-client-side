@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 
 const ChefCard = ({chef}) => {
     console.log(chef);
-    const {image, name, numRecipes, yearsOfExperience} = chef;
+    const {image, name, numRecipes, yearsOfExperience, Likes} = chef;
     return (
         <div>
             <div className='mb-5 m-2'>
@@ -13,10 +13,11 @@ const ChefCard = ({chef}) => {
                     <Card.Body>
                         <Card.Title>Name: {name}</Card.Title>
                         <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
+                            <h4>Years of experience: {yearsOfExperience}</h4>
+                            <h6>Numbers of recipes: {numRecipes}</h6>
+                            <p>Likes: {Likes}</p>
                         </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
+                        <Button variant="primary">View Recipes Button</Button>
                     </Card.Body>
                 </Card>
             </div>
