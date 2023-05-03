@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProviders';
@@ -6,6 +6,8 @@ import { AuthContext } from '../../../providers/AuthProviders';
 const Login = () => {
 
     const { signIn, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
 
     const handleLogin = (evnet) => {
         evnet.preventDefault();
@@ -14,14 +16,21 @@ const Login = () => {
         const password = form.password.value;
         console.log(email, password);
 
+        // validation
+        setError('');
+        setSuccess('');
+
         signIn(email, password)
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
                 form.reset();
+                setSuccess('User login successful.');
+                setError('');
             })
             .catch(error => {
                 console.log(error);
+                setError(error.message);
             })
 
     }
@@ -39,13 +48,13 @@ const Login = () => {
 
     const handleGithubSignIn = () => {
         signInWithGithub()
-        .then(result => {
-            const loggedUser = result.user;
-            console.log(loggedUser);
-        })
-        .catch(error => {
-            console.log(error);
-        })
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
     return (
@@ -58,11 +67,18 @@ const Login = () => {
 
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Group className="mb-1" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" name='password' placeholder="Password" required />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                <br />
+                <Form.Text className="text-success">
+                    {success}
+                </Form.Text>
+                <Form.Text className="text-danger">
+                    {error}
+                </Form.Text>
+                <Form.Group className="mb-3 mt-2" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
                 <Button variant="primary" type="submit" className='fw-bold'>
@@ -71,10 +87,6 @@ const Login = () => {
                 <br />
                 <Form.Text className="text-secondary">
                     Don't Have an Account? <Link to="/register">Register</Link>
-                </Form.Text>
-                <Form.Text className="text-success">
-                </Form.Text>
-                <Form.Text className="text-danger">
                 </Form.Text>
             </Form>
             <br />
