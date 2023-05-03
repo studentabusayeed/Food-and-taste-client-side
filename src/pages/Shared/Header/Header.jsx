@@ -25,6 +25,9 @@ const Header = () => {
                                 <Link to="/login">
                                     <Button variant="primary">Login</Button>
                                 </Link>
+                                <Link to="/register">
+                                    <Button variant="primary">Register</Button>
+                                </Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
