@@ -26,7 +26,7 @@ const Header = () => {
                         <li className='header-container'>
                             <ActiveLink to="/"><Button variant="link" className='text-decoration-none'>Home</Button></ActiveLink>
                         </li>
-                        <li className='header-container'>
+                        <li className='header-container select-item'>
                             <ActiveLink to="/blog"><Button variant="link" className='text-decoration-none'>Blog</Button></ActiveLink>
                         </li>
                     </Nav>
@@ -35,14 +35,15 @@ const Header = () => {
                         {
                             user ?
                                 <>
-                                    <FaUserAlt title='hello' style={{ fontSize: '2rem' }}></FaUserAlt>
-                                    <Button className='ms-2' onClick={handleLogout} variant="primary">Sign Out</Button></> :
-                                <Link to="/login" className='ms-2'>
+                                    <FaUserAlt className='img-menu' title='hello' style={{ fontSize: '2rem' }}></FaUserAlt>
+                                    <Link><Button className='ms-3 second-menu' onClick={handleLogout} variant="primary">Sign Out</Button></Link>
+                                </> :
+                                <Link to="/login" className='ms-1 second-menu'>
                                     <Button variant="primary">Login</Button>
                                 </Link>
                         }
                         <Link to="/register">
-                            <Button className='ms-3' variant="primary">Register</Button>
+                            <Button className='ms-3 first-menu' variant="primary">Register</Button>
                         </Link>
                     </Nav>
                 </Navbar.Collapse>

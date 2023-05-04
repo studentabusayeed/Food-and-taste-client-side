@@ -5,8 +5,8 @@ import './Banner.css';
 
 const Banner = () => {
     return (
-        <Container className='d-flex'>
-            <div>
+        <Container className='d-flex hello'>
+            <div className='banner-container'>
                 <img src={banner} alt="" />
             </div>
             <div className='banner p-2'>

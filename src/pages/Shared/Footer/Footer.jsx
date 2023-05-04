@@ -41,7 +41,7 @@ const Footer = () => {
                                 <a href="" className="text-white me-4">
                                     <FaYoutube style={{ fontSize: '30px' }}></FaYoutube>
                                 </a>
-                                <a href="" className="text-white me-4">
+                                <a href="" className="text-white">
                                     <FaDribbble style={{ fontSize: '30px' }}></FaDribbble>
                                 </a>
                             </section>

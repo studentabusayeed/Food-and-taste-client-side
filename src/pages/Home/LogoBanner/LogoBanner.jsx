@@ -13,7 +13,7 @@ const LogoBanner = () => {
             <h4 className=' text-center text-success mb-2 fw-semi-bold fs-2'>Restaurant Logo</h4>
             <hr />
             <div className='banner-item my-4 py-5'>
-                <div className='d-flex justify-content-center align-items-center banner-logo mr-5'>
+                <div className='d-flex justify-content-center align-items-center banner-logo mr-5 logo-item'>
                     <img src={logo1} alt="" />
                     <img src={logo2} alt="" />
                     <img src={logo3} alt="" />

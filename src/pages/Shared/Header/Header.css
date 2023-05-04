@@ -8,8 +8,21 @@
     display: flex;
     align-items: center;
     margin-right: 10px;
-    /* padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    padding-right: 5px; */
 }
+
+@media (max-width: 576px) {
+    .first-menu {
+        margin-top: 10px;
+    }
+    .img-menu {
+        margin-bottom: 10px;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+    .second-menu {
+        margin-left: 10px;
+    }
+    .select-item {
+        margin-top: 10px;
+    }
+ }

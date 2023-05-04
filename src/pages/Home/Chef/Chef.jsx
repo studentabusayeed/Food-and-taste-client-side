@@ -28,7 +28,7 @@ const Chef = () => {
             <h2 className='text-center text-success fw-semi-bold'>Our Chefs</h2>
             <hr className='fw-bold text-center' />
             </div>
-            <div className='row row-cols-3'>
+            <div className='row row-cols-sm-3'>
                 {
                     food.map(chef => <ChefCard
                         key={chef.id}

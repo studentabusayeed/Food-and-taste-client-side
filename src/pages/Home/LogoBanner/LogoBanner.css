@@ -8,3 +8,19 @@
     padding: 400px;
     height: 200px;
 }
+
+@media (max-width: 576px) {
+    .logo-item {
+        flex-direction: column;
+    }
+    .banner-item {
+        background-color: rgb(236, 232, 224);
+        padding: 100px;
+        height: 600px;
+    }
+    .banner-logo img {
+        width: 120px;
+        margin-left: 0px;
+        margin-top: 30px;
+    }
+}
