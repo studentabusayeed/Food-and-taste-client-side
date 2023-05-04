@@ -5,8 +5,11 @@ import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import './ViewRecipe.css';
 import { FaHeart } from 'react-icons/fa';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ViewRecipe = () => {
+    const notify = () => toast("Fovorite Clicked!");
     const recipe = useLoaderData();
     const { image, name, yearsOfExperience, img1, img2, img3, name1, name2, name3, ingredients, rating } = recipe;
     return (
@@ -33,7 +36,8 @@ const ViewRecipe = () => {
                             <Card.Text>
                                 <p>Rating: {rating}</p>
                                 <div>
-                                    <button>Favorite <FaHeart /> </button>
+                                    <button onClick={notify}>Favorite <FaHeart /> </button>
+                                    <ToastContainer />
                                 </div>
                             </Card.Text>
                         </Card.Body>
@@ -46,7 +50,8 @@ const ViewRecipe = () => {
                             <Card.Text>
                                 <p>Rating: {rating}</p>
                                 <div>
-                                    <button>Favorite <FaHeart /> </button>
+                                    <button onClick={notify}>Favorite <FaHeart /> </button>
+                                    <ToastContainer />
                                 </div>
                             </Card.Text>
                         </Card.Body>
@@ -59,7 +64,8 @@ const ViewRecipe = () => {
                             <Card.Text>
                                 <p>Rating: {rating}</p>
                                 <div>
-                                    <button>Favorite <FaHeart /> </button>
+                                    <button onClick={notify}>Favorite <FaHeart /> </button>
+                                    <ToastContainer />
                                 </div>
                             </Card.Text>
                         </Card.Body>
