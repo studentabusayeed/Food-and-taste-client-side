@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
-import { Button, Container, Nav, Navbar} from 'react-bootstrap';
+import { Button, Container, Nav, NavLink, Navbar } from 'react-bootstrap';
 import './Header.css';
 import { Link } from 'react-router-dom';
 import { FaUserAlt } from 'react-icons/fa';
 import { AuthContext } from '../../../providers/AuthProviders';
+import ActiveLink from '../ActiveLink/ActiveLink';
 
 
 const Header = () => {
@@ -22,8 +23,12 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ms-auto">
-                        <Link className='text-decoration-none fs-5 fw-bold  text-black' to="/">Home</Link>
-                        <Link className='mx-4  text-decoration-none fs-5 fw-bold text-black' to="/blog">Blog</Link>
+                        <li className='header-container'>
+                            <ActiveLink to="/"><Button variant="link" className='text-decoration-none'>Home</Button></ActiveLink>
+                        </li>
+                        <li className='header-container'>
+                            <ActiveLink to="/blog"><Button variant="link" className='text-decoration-none'>Blog</Button></ActiveLink>
+                        </li>
                     </Nav>
                     <Nav>
 
@@ -32,7 +37,7 @@ const Header = () => {
                                 <>
                                     <FaUserAlt title='hello' style={{ fontSize: '2rem' }}></FaUserAlt>
                                     <Button className='ms-2' onClick={handleLogout} variant="primary">Sign Out</Button></> :
-                                <Link to="/login">
+                                <Link to="/login" className='ms-2'>
                                     <Button variant="primary">Login</Button>
                                 </Link>
                         }
