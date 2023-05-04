@@ -36,7 +36,6 @@ const Header = () => {
                         {
                             user ?
                                 <>
-                                    {/* <FaUserAlt className='img-menu' title='hello' style={{ fontSize: '2rem' }}></FaUserAlt> */}
                                     <img className={user.photoURL ? 'img-menu': ''} title={user?.displayName} src={user?.photoURL
                                     } alt="" />
                                     <Link><Button className='ms-3 second-menu' onClick={handleLogout} variant="primary">Sign Out</Button></Link>
