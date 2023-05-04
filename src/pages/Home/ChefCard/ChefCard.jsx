@@ -4,7 +4,6 @@ import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
 const ChefCard = ({ chef }) => {
-    console.log(chef);
     const { id, image, name, numRecipes, yearsOfExperience, Likes } = chef;
     return (
         <div>

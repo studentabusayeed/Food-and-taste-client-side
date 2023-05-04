@@ -11,7 +11,7 @@ const Chef = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        fetch('http://localhost:5000/food')
+        fetch('https://food-and-taste-server-side-studentabusayeed.vercel.app/food')
             .then(res => res.json())
             .then(data => {
                 setFood(data)
