@@ -9,6 +9,10 @@
     align-items: center;
     margin-right: 10px;
 }
+.img-menu {
+    width: 50px;
+    border-radius: 50%;
+}
 
 @media (max-width: 576px) {
     .first-menu {

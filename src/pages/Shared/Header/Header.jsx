@@ -9,6 +9,7 @@ import ActiveLink from '../ActiveLink/ActiveLink';
 
 const Header = () => {
     const { user, logout } = useContext(AuthContext);
+    console.log(user);
 
     const handleLogout = () => {
         logout()
@@ -35,7 +36,9 @@ const Header = () => {
                         {
                             user ?
                                 <>
-                                    <FaUserAlt className='img-menu' title='hello' style={{ fontSize: '2rem' }}></FaUserAlt>
+                                    {/* <FaUserAlt className='img-menu' title='hello' style={{ fontSize: '2rem' }}></FaUserAlt> */}
+                                    <img className={user.photoURL ? 'img-menu': ''} title={user?.displayName} src={user?.photoURL
+                                    } alt="" />
                                     <Link><Button className='ms-3 second-menu' onClick={handleLogout} variant="primary">Sign Out</Button></Link>
                                 </> :
                                 <Link to="/login" className='ms-1 second-menu'>
