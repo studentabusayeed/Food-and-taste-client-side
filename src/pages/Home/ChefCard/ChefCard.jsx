@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const ChefCard = ({ chef }) => {
     console.log(chef);
-    const { image, name, numRecipes, yearsOfExperience, Likes } = chef;
+    const { id, image, name, numRecipes, yearsOfExperience, Likes } = chef;
     return (
         <div>
             <div className='mb-5 m-2'>
@@ -18,7 +18,7 @@ const ChefCard = ({ chef }) => {
                             <h6>Numbers of recipes: {numRecipes}</h6>
                             <p>Likes: {Likes}</p>
                         </Card.Text>
-                        <Link to="/view-recipe">
+                        <Link to={`/view-recipe/${id}`}>
                             <Button variant="primary">View Recipes Button</Button>
                         </Link>
                     </Card.Body>

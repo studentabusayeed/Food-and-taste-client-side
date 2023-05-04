@@ -5,11 +5,14 @@ import Login from "../pages/Login/Login/Login";
 import Register from "../pages/Login/Register/Register";
 import Blog from "../pages/Blog/Blog";
 import ViewRecipe from "../pages/ViewRecipe/ViewRecipe";
+import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../pages/Home/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: "/",
@@ -24,8 +27,9 @@ const router = createBrowserRouter([
                 element: <Register></Register>
             },
             {
-                path: "/view-recipe",
-                element: <ViewRecipe></ViewRecipe>
+                path: "/view-recipe/:id",
+                element: <PrivateRoute><ViewRecipe></ViewRecipe></PrivateRoute>,
+                loader: ({params}) => fetch(`http://localhost:5000/food/${params.id}`)
             },
             {
                 path: "/blog",

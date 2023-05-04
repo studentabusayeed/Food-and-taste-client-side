@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProviders';
 
 const Login = () => {
@@ -8,6 +8,12 @@ const Login = () => {
     const { signIn, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
+    const [show, setShow] = useState(false);
+
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
 
     const handleLogin = (evnet) => {
         evnet.preventDefault();
@@ -27,6 +33,7 @@ const Login = () => {
                 form.reset();
                 setSuccess('User login successful.');
                 setError('');
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 console.log(error);
@@ -69,7 +76,12 @@ const Login = () => {
 
                 <Form.Group className="mb-1" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" name='password' placeholder="Password" required />
+                    <Form.Control type={show ? "text" : "password"} name='password' placeholder="Password" required />
+                    <p className='mt-2' onClick={() => setShow(!show)}><small>
+                        {
+                            show ? <span>Hide Password</span> : <span>Show Password</span>
+                        }
+                    </small></p>
                 </Form.Group>
                 <br />
                 <Form.Text className="text-success">
